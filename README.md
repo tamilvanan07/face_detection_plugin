@@ -153,7 +153,7 @@ if (embedding != null) {
 
 ## Example
 
-For a complete working example, check out the [`example`](https://github.com/tamilvanan/face_detection_plugin/tree/main/example) directory in the repository.
+For a complete working example, check out the [`example`](https://github.com/tamilvanan07/face_detection_plugin/tree/main/example) directory in the repository.
 
 ---
 
