@@ -1,0 +1,115 @@
+group = 'com.tv.face_detection_plugin'
+version = '1.0-SNAPSHOT'
+
+// Plugin versions are declared in settings.gradle pluginManagement block.
+// When included as a subproject by the Flutter host app, the host's
+// settings.gradle.kts already registers these plugins — the guard below
+// prevents double-application of kotlin-android.
+
+apply plugin: 'com.android.library'
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+if (!project.plugins.hasPlugin('org.jetbrains.kotlin.android')) {
+    apply plugin: 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.tv.face_detection_plugin'
+
+    compileSdk 36
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    defaultConfig {
+        minSdk 24
+        multiDexEnabled true
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+
+    androidResources {
+        noCompress 'tflite'
+    }
+
+    packaging {
+        jniLibs {
+            pickFirsts += [
+                'lib/x86/libtensorflowlite_jni.so',
+                'lib/x86_64/libtensorflowlite_jni.so',
+                'lib/armeabi-v7a/libtensorflowlite_jni.so',
+                'lib/arm64-v8a/libtensorflowlite_jni.so',
+                'lib/x86/libtensorflowlite_framework_jni.so',
+                'lib/x86_64/libtensorflowlite_framework_jni.so',
+                'lib/armeabi-v7a/libtensorflowlite_framework_jni.so',
+                'lib/arm64-v8a/libtensorflowlite_framework_jni.so'
+            ]
+        }
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            all {
+                useJUnitPlatform()
+                outputs.upToDateWhen { false }
+                testLogging {
+                    events "passed", "skipped", "failed", "standardOut", "standardError"
+                    showStandardStreams = true
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    testImplementation 'org.mockito:mockito-core:5.0.0'
+
+    // kotlin core
+    implementation 'androidx.core:core-ktx:1.16.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+
+    // tensorflow lite
+    implementation 'org.tensorflow:tensorflow-lite:2.17.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.5.0'
+    implementation 'com.google.code.gson:gson:2.14.0'
+
+    // cameraX
+    implementation 'androidx.camera:camera-core:1.6.2'
+    implementation 'androidx.camera:camera-camera2:1.6.2'
+    implementation 'androidx.camera:camera-lifecycle:1.6.2'
+    implementation 'androidx.camera:camera-view:1.6.2'
+
+    // ml kit face detection
+    implementation 'com.google.mlkit:face-detection:16.1.7'
+
+    // lifecycle
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.11.0'
+
+    // guava
+    implementation 'com.google.guava:guava:33.7.1-android'
+
+    // mediapipe
+    implementation('com.google.mediapipe:tasks-vision:1.0.0') {
+        exclude group: 'com.google.auto.value', module: 'auto-value-annotations'
+        exclude group: 'com.squareup', module: 'javapoet'
+    }
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+}

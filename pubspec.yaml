@@ -1,0 +1,26 @@
+name: face_detection_plugin
+description: "A Flutter plugin for native Face Detection and TensorFlow Lite Face Embedding extraction."
+version: 0.0.2
+repository: https://github.com/tamilvanan/face_detection_plugin
+issue_tracker: https://github.com/tamilvanan/face_detection_plugin/issues
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.tv.face_detection_plugin
+        pluginClass: FaceDetectionPlugin

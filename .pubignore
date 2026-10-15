@@ -1,0 +1,29 @@
+# Build directories
+build/
+**/build/
+.gradle/
+**/.gradle/
+.dart_tool/
+**/.dart_tool/
+
+# IDE & Tooling
+.idea/
+.vscode/
+.fvm/
+.fvmrc
+*.iml
+
+# Platform build directories & pods
+example/build/
+example/.dart_tool/
+example/ios/Pods/
+example/ios/Podfile.lock
+example/android/.gradle/
+example/android/build/
+example/android/app/build/
+
+# Temporary and log files
+*.log
+flutter_*.log
+.DS_Store
+doc/

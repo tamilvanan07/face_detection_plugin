@@ -1,0 +1,96 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "2:4801138798620272475",
+      "lastPropertyId": "4:5672137901234567890",
+      "name": "Person",
+      "properties": [
+        {
+          "id": "1:4920381274019283746",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3847291038471029384",
+          "name": "name",
+          "indexId": "3:1928374650192837465",
+          "type": 9,
+          "flags": 2048
+        },
+        {
+          "id": "3:2938471029384710293",
+          "name": "age",
+          "type": 6
+        },
+        {
+          "id": "4:5672137901234567890",
+          "name": "createdAt",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:7291038471029384710",
+      "lastPropertyId": "4:5959725605985006383",
+      "name": "FaceEmbedding",
+      "properties": [
+        {
+          "id": "1:1029384710293847102",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4710293847102938471",
+          "name": "embedding",
+          "indexId": "4:6471029384710293847",
+          "type": 28,
+          "flags": 8
+        },
+        {
+          "id": "4:5959725605985006383",
+          "name": "personId",
+          "indexId": "5:1851238411320977178",
+          "type": 11,
+          "flags": 520,
+          "relationTarget": "Person"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "4:3292624764890587937",
+  "lastIndexId": "7:2734973505557168716",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [
+    6271243297336781656,
+    3292624764890587937
+  ],
+  "retiredIndexUids": [
+    243656393529104722,
+    913242226176754474
+  ],
+  "retiredPropertyUids": [
+    1749944046606122193,
+    3703889901161287314,
+    1628356090868927293,
+    7058634618222963176,
+    9026228772536870485,
+    8374610293847102,
+    7153293829303712086,
+    1904981651550024594,
+    7335825839683523940,
+    5215004476536097535,
+    627079230823217232
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

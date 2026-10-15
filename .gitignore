@@ -1,0 +1,35 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+
+# IntelliJ & VSCode related
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# Flutter/Dart/Pub related
+pubspec.lock
+**/doc/api/
+.dart_tool/
+**/.dart_tool/
+.flutter-plugins-dependencies
+build/
+**/build/
+.gradle/
+**/.gradle/
+/coverage/
+
+# FVM Version Cache
+.fvm/
+.fvmrc
