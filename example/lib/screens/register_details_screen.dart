@@ -187,10 +187,12 @@ class _RegisterDetailsScreenState extends State<RegisterDetailsScreen> {
                   theme: theme,
                   capitalization: TextCapitalization.words,
                   validator: (v) {
-                    if (v == null || v.trim().isEmpty)
+                    if (v == null || v.trim().isEmpty) {
                       return 'Enter a name';
-                    if (v.trim().length < 2)
+                    }
+                    if (v.trim().length < 2) {
                       return 'At least 2 characters';
+                    }
                     return null;
                   },
                 ),
@@ -209,11 +211,13 @@ class _RegisterDetailsScreenState extends State<RegisterDetailsScreen> {
                     FilteringTextInputFormatter.digitsOnly
                   ],
                   validator: (v) {
-                    if (v == null || v.trim().isEmpty)
+                    if (v == null || v.trim().isEmpty) {
                       return 'Enter an age';
+                    }
                     final n = int.tryParse(v.trim());
-                    if (n == null || n < 1 || n > 120)
+                    if (n == null || n < 1 || n > 120) {
                       return 'Enter 1–120';
+                    }
                     return null;
                   },
                 ),

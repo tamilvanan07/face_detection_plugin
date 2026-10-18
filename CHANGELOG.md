@@ -1,3 +1,9 @@
+## 0.0.3
+
+* Fixed repository and issue tracker URLs to point to github.com/tamilvanan07.
+* Improved example app documentation and added multi-angle face registration guide.
+* Fixed static analysis issues and updated example test suite.
+
 ## 0.0.2
 
 * Updated platform configuration to Android only on pub.dev.

@@ -23,7 +23,7 @@ Add `face_detection_plugin` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  face_detection_plugin: ^0.0.2
+  face_detection_plugin: ^0.0.3
 ```
 
 Or run:
